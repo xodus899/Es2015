@@ -20,3 +20,4 @@ console.log(a);
 console.log(++a); // ++ take 1 and adds to the value, then  outputs the value;
 console.log(a++); // takes a and adds 1 to it so when you check a it will be 2;
 console.log(typeof negInteger);
+
