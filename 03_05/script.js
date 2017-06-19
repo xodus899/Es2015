@@ -14,3 +14,7 @@ if ( a === b ) {
 
 console.log("The numbers match: ",theNumbersMatch);
 
+
+// ternary operator
+
+a == b ? console.log("Match") : console.log("No match");
