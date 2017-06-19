@@ -1,0 +1,10 @@
+<!--  rules
+ - Javascript is case sensitive
+ - camelCase is used for Javascript ex: getElementByTagName
+ 	 - variables start lowercase
+ 	 - objects and classes start uppercase letter
+ 	 - constants are all caps
+ - Javascript does not care about whitespace. But matters to humans
+ - End each statement with a Semicolon. Not always required but good practice
+ - Use comments Liberally  // single line  or /* multi line */
+
