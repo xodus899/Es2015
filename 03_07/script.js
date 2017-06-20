@@ -16,4 +16,4 @@ console.log(mixedArray, " [3] has been modified");
 
 
 
-document.body.innerHTML = "<h4> Check the console </h4>"
+document.querySelector("#blah").innerHTML = " Check the console "
