@@ -7,3 +7,5 @@ function fraction() {
 
 
 fraction();
+
+document.querySelector("#h4").innerHTML = "Check console";
