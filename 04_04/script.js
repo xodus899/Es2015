@@ -10,5 +10,7 @@ let secondFraction = 5/7;
 let fractionResults = findBiggestFraction(firstFraction,secondFraction);
 console.log("First fraction result: ", firstFraction);
 console.log("Second fraction result: ", secondFraction);
-console.log("Fraction: " + fractionResults[0] + " with a value of " + fractionResults[1] + " is the biggest.")
+console.log("Fraction: " + fractionResults[0] + " with a value of " + fractionResults[1] + " is the biggest.");
+
+document.querySelector("#h4").innerHTML = "Check console";
 
