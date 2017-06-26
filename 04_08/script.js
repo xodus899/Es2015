@@ -5,6 +5,7 @@
 	- let
 		-block scope variable
 		-smaller scope than var
+		- only available to that block of code
 */
 
 
@@ -13,7 +14,9 @@ const myConstant = 5;
 console.log(myConstant);
 
 function logScope() {
-	let localVar = 2;
+	// example of let available only to the conditional block
+	var localVar = 2;
+
 	if(localVar) {
 		let localVar = "I'm different";
 		console.log("nested localVar:", localVar);
