@@ -98,7 +98,7 @@ let data = [
 function getPerson(index) {
   return data[index];
 }
-console.log(getPerson(0));
+//console.log(getPerson(0));
 
 function fullName(index) { 
   if (data[index].name.middle === "") {
@@ -107,7 +107,7 @@ function fullName(index) {
     return data[index].name.first +  " " + data[index].name.middle + " " + data[index].name.last;
   }
 }
-console.log(fullName(2));
+//console.log(fullName(2));
 
 function formattedBirthday(birthday, anyDelimiter = "/") {
   //birthday =  getPerson(0).birthday = { month: 5, day: 21, year: 1989 }
@@ -121,7 +121,26 @@ function formattedBirthday(birthday, anyDelimiter = "/") {
   }
   return birthday.month + anyDelimiter + birthday.day + anyDelimiter + birthday.year;
 }
-console.log(formattedBirthday(getPerson(0).birthday,""));
+//console.log(formattedBirthday(getPerson(0).birthday,""));
+
+function getPersonByName(name) {
+  let person;
+  // name === "leandro"
+  data.forEach(function (el) {
+    // console.log(el.name.first);
+    // console.log(el.name.first, name);
+    if (el.name.first === name) {
+      // console.log(el);
+      person = el;
+
+    }
+  });
+  return person;
+}
+console.log(getPersonByName("Leandro"));
+
+
+
 
 
 
