@@ -135,6 +135,9 @@ function getPersonByName(fName,lName) {
       person = el;
     } 
   });
+  if (person === undefined) {
+    throw new Error("You did not provide a valid first and last name");
+  }
   return person;
 }
 console.log(getPersonByName("Leandro","Silva"));
