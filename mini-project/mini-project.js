@@ -123,21 +123,20 @@ function formattedBirthday(birthday, anyDelimiter = "/") {
 }
 //console.log(formattedBirthday(getPerson(0).birthday,""));
 
-function getPersonByName(name) {
+function getPersonByName(fName,lName) {
   let person;
   // name === "leandro"
   data.forEach(function (el) {
     // console.log(el.name.first);
     // console.log(el.name.first, name);
-    if (el.name.first === name) {
+    if (el.name.first.toLowerCase() === fName.toLowerCase() && el.name.last.toLowerCase() === lName.toLowerCase() ) {
       // console.log(el);
       person = el;
-
-    }
+    } 
   });
   return person;
 }
-console.log(getPersonByName("Leandro"));
+console.log(getPersonByName("Leandro","Silva"));
 
 
 
