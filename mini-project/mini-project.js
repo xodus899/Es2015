@@ -123,24 +123,88 @@ function formattedBirthday(birthday, anyDelimiter = "/") {
 }
 //console.log(formattedBirthday(getPerson(0).birthday,""));
 
-function getPersonByName(fName,lName) {
+// old function before changing to object paramter
+
+// function getPersonByName(fName, lName, mName = "") {
+//   let person;
+//   // name === "leandro"
+//   data.forEach(function (el) {
+//     // console.log(el.name.first);
+//     // console.log(el.name.first, fName);
+//     // console.log(el.name.middle, mName);
+//     if (el.name.first.toLowerCase() === fName.toLowerCase() && el.name.last.toLowerCase() === lName.toLowerCase() && el.name.middle.toLowerCase() === mName.toLowerCase() ) {
+//       // console.log(el);
+//       person = el;
+//     } 
+//   });
+//   if (person === undefined) {
+//     throw new Error("This person does not exist");
+//   }
+//   return person;
+// }
+// console.log(getPersonByName("Lucio","Ordonez","S"));
+
+
+function getPersonByName(name) {
   let person;
+  console.log(name);
+
+   if (name.first === undefined) {
+      throw new Error("First name required");
+  }
+
+  if (name.middle === undefined) {
+    name.middle = "";
+  }
+
+ 
+  
   // name === "leandro"
   data.forEach(function (el) {
-    // console.log(el.name.first);
-    // console.log(el.name.first, fName);
-    // console.log(el.name.middle, mName);
-    if (el.name.first.toLowerCase() === fName.toLowerCase() && el.name.last.toLowerCase() === lName.toLowerCase() ) {
-      // console.log(el);
+    // console.log(name.middle);
+
+    if (el.name.first.toLowerCase() === name.first.toLowerCase()) {
       person = el;
-    } 
+    } else {
+      return;
+    }
+    if (name.last) {
+      if (el.name.last.toLowerCase() === name.last.toLowerCase()) {
+        person = el;
+      } else {
+        person = undefined
+        return;
+      }
+    }
+
+    if (name.middle) {
+      if (el.name.middle.toLowerCase() === name.middle.toLowerCase()) {
+        person = el;
+      } else {
+        person = undefined
+        return;
+      }
+    }
+
+  
+    // if (el.name.first.toLowerCase() === name.first.toLowerCase() 
+    //     && el.name.last.toLowerCase() === name.last.toLowerCase() 
+    //     && el.name.middle.toLowerCase() === name.middle.toLowerCase() ) {
+    //   // console.log(el);
+    //   person = el;
+    // } 
   });
   if (person === undefined) {
-    throw new Error("You did not provide a valid first and last name");
+    throw new Error("This person does not exist");
   }
   return person;
 }
-console.log(getPersonByName("Leandro","Silva"));
+console.log(getPersonByName({
+  first: "Leandro",
+  last: "Silva",
+  middle: ""
+}));
+
 
 
 
