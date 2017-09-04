@@ -1,0 +1,101 @@
+let myObj = {
+  // finish myObj
+  name:"Chris"
+};
+
+console.log( myObj.hasOwnProperty('name') ); // should print true
+console.log( myObj.hasOwnProperty('nickname') ); // should print false
+
+function obj(){
+  if(myObj.hasOwnProperty('name')){
+    return "Name:" + myObj.name;
+  }
+}
+console.log(obj());
+
+let nyc = {
+    fullName: "New York City",
+    mayor: "Bill de Blasio",
+    population: 8000000,
+    boroughs: 5
+};
+
+for(let value in nyc) {
+    console.log(value);
+}
+
+for(let value in nyc) {
+    console.log(nyc[value]);
+}
+
+function Dog (breed) {
+  this.breed = breed;
+}
+
+let buddy = new Dog("Golden Retriever");
+buddy.bark = function() {
+  console.log("Woof");
+};
+buddy.bark();
+
+// here we make snoopy
+let snoopy = new Dog("Beagle");
+snoopy.bark = function(){
+    console.log("WOOOOF!");
+};
+snoopy.bark();
+
+function Person(name,age) {
+  this.name = name;
+  this.age = age;
+}
+
+let printPersonName = function (p) {
+  console.log(p.name);
+};
+
+let bob = new Person("Bob Smith", 30);
+printPersonName(bob);
+
+let me = new Person("Chris J", 28);
+printPersonName(me);
+
+function Dog (breed) {
+  this.breed = breed;
+}
+
+let buddy1 = new Dog("golden Retriever");
+Dog.prototype.bark = function() {
+  console.log("Woof");
+};
+buddy1.bark();
+
+let snoopy1 = new Dog("Beagle");
+snoopy1.bark();
+
+function Cat(name, breed) {
+    this.name = name;
+    this.breed = breed;
+}
+
+let cheshire = new Cat("Cheshire Cat", "British Shorthair");
+let gary = new Cat("Gary", "Domestic Shorthair");
+
+Cat.prototype.meow = function(){
+    console.log("Meow!");
+};
+
+cheshire.meow();
+gary.meow();
+
+function Animal(name,numLegs){
+    this.name = name;
+    this.numLegs = numLegs;
+}
+
+Animal.prototype.sayName = function() {
+    console.log("Hi my name is " + this.name);
+}
+
+let penguin = new Animal("Captain Cook", 2);
+penguin.sayName();
