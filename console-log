@@ -1,0 +1,11 @@
+//recreating console.log 
+
+let console2 = {
+  log:(userInput,...theArgs) => {
+    let date = new Date();
+    return  "[" + (date.getMonth() + 1)  + "/" + date.getDate() + "]" + userInput + ","  + theArgs;
+  }
+};
+console2.log("hello");
+console2.log("hi");
+console2.log(1,2,3,4,5,6,7);
